@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<view class='news-warpper'>
+  <view class='news-title'>{{news.title}}</view>
+  <view class='news-info'>
+    <view class='news-info-left'>{{news.source ? news.source : '未知来源'}} {{news.date}}</view>
+    <view class='news-info-right'>阅读:{{news.readCount}}</view>
+  </view>
+
+  <view class='news-content' wx:for='{{news.content}}' wx:key>
+    <view wx:if="{{item.type == 'p'}}" class='p'>{{item.text}}</view>
+    <view wx:if="{{item.type == 'strong'}}" class='strong'>{{item.text}}</view>
+    <image wx:if="{{item.type == 'image'}}" src='{{item.src}}' class='image'></image>
+  </view>
+</view>

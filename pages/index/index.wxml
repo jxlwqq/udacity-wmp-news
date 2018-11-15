@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class='classify-warpper'>
+  
+    <view class='classify-title {{currentClassify == index ? "current-classify" : ""}}'  wx:for="{{newsClassify}}" wx:key="{{index}}" data-classify="{{index}}" bindtap='OnSwitchClassify'>{{item}}</view>
+
+</view>
+
+<view class='hot-news-warpper' data-id="{{hotNews.id}}" bindtap='OnBrowseDetail'>
+  <image src='{{hotNews.firstImage}}' class='hot-news-image'></image>
+  <view class='hot-news-icon'>热门</view>
+  <view class='hot-news-title'>{{hotNews.title}}</view>
+  <view class='hot-news-info'>
+    <view class='hot-news-source'>{{hotNews.source ? hotNews.source: '未知来源'}}</view>
+    <view class='hot-news-time'>{{hotNews.date}}</view>
+  </view>
+</view>
+
+<view class='news-list-warpper'>
+  <view class='news-warpper' wx:for="{{newsList}}" wx:key data-id="{{item.id}}" bindtap='OnBrowseDetail'>
+    <view class='news-left'>
+      <view class='news-title'>{{item.title}}</view>
+      <view class='news-info'>
+        <view class='news-source'>{{item.source ? item.source: '未知来源'}}</view>
+        <view class='news-time'>{{item.date}}</view>
+      </view>
+    </view>
+    <view class='news-right'>
+      <image class='news-image' src='{{item.firstImage}}'></image>
+    </view>
+  </view>
+</view>
