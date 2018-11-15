@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='classify-warpper'>
-  
-    <view class='classify-title {{currentClassify == index ? "current-classify" : ""}}'  wx:for="{{newsClassify}}" wx:key="{{index}}" data-classify="{{index}}" bindtap='OnSwitchClassify'>{{item}}</view>
+
+  <view class='classify-title {{currentClassify == index ? "current-classify" : ""}}' wx:for="{{newsClassify}}" wx:key="{{index}}" data-classify="{{index}}" bindtap='OnSwitchClassify'>{{item}}</view>
 
 </view>
 

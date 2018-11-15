@@ -26,67 +26,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getNewsList('gn')
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
+    this.getNewsList(this.data.currentClassify)
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getNewsList(this.data.currentClassify, wx.stopPullDownRefresh)
   },
 
   /**
-   * 页面上拉触底事件的处理函数
+   * 切换新闻分类
    */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
-
   OnSwitchClassify: function(e) {
     let classify = e.currentTarget.dataset.classify
     this.setData({
       currentClassify: classify
     })
-    console.log(this.data.currentClassify)
     this.getNewsList(classify)
   },
 
+  /**
+   * 调整详情
+   */
   OnBrowseDetail: function(e) {
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
@@ -94,6 +57,9 @@ Page({
     })
   },
 
+  /**
+   * 获取新闻列表
+   */
   getNewsList: function(classify, callback) {
     let domain = app.globalData.domain
     let api = domain + '/api/news/list'
@@ -110,7 +76,7 @@ Page({
         newsList.forEach(function(item) {
           item.date = item.date.substr(11, 5)
         })
-        
+
         this.setData({
           hotNews: hotNews,
           newsList: newsList

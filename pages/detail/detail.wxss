@@ -3,30 +3,30 @@
 .news-warpper {
   margin: 25rpx;
 }
+
 .news-title {
   font-size: 40rpx;
   margin-bottom: 30rpx;
-  color: #6B6C6C;
+  color: #6b6c6c;
 }
 
 .news-info {
   display: flex;
   justify-content: space-between;
   font-size: 25rpx;
-  color:#9D9D9D;
+  color: #9d9d9d;
   margin-bottom: 20rpx;
 }
 
 .news-content {
   font-size: 30rpx;
   line-height: 45rpx;
-  color: #6B6C6C;
+  color: #6b6c6c;
 }
 
 .news-content .p, .news-content .strong, .news-content .image {
   padding: 10rpx 0;
 }
-
 
 .news-content .strong {
   font-weight: 800;
@@ -34,5 +34,5 @@
 
 .news-content .image {
   width: 100%;
-    border-radius: 5rpx;
+  border-radius: 5rpx;
 }
