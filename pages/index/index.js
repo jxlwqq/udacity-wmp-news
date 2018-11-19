@@ -71,10 +71,11 @@ Page({
       success: res => {
         let list = res.data.result
         let hotNews = list.slice(0, 1)[0]
-        hotNews.date = hotNews.date.substr(11, 5)
+        console.log(hotNews)
+        hotNews.date = hotNews.date.substr(5, 5) + ' ' + hotNews.date.substr(11, 5)
         let newsList = list.slice(1, 8)
         newsList.forEach(function(item) {
-          item.date = item.date.substr(11, 5)
+          item.date = item.date.substr(5, 5) + ' ' + item.date.substr(11, 5)
         })
 
         this.setData({

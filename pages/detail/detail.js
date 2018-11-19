@@ -24,7 +24,7 @@ Page({
       },
       success: res => {
         let news = res.data.result
-        news.date = news.date.substr(11, 5)
+        news.date = news.date.substr(5, 5) + ' ' + news.date.substr(11, 5)
         this.setData({
           news: news
         })
